@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Pacifico|Poppins:300,400,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section id="content">
+        <div class="container micro">
+            <div class="memer">
+                    <img id="memer"
+                         src = "http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png"
+                         alt="meme"/>
+                    <h1 class="align-center logo">Meme Generator</h1>
+            </div>
+            <div class="section rav_b central_section">
+                <div id="preview" class="col cols_7 cols__8 cols__12 col_pad_b">
+                    <div class="inside-frame">
+                        <canvas id="memeResult">
+                            Your browser does not support the HTML5 canvas tag.</canvas>
+                    </div>
+                </div>
+                <div id="steps" class="col cols_5 cols__4 cols__12 col_pad_b">
+                    <div class="steps-frame">
+                        <div class="step active-step" data-step="1" data-validation="true">
+                            <h3>Step 1: Upload your image</h3>
+                            <div class="input-row">
+                                <label for="selectImg" class="buttons">Select Image</label>
+                                <span id="selectedImgName"><em>No file selected</em></span>
+                                <input id="selectImg" type="file" accept="image/*">
+                            </div>
+                            <div class="input-row crop-controls basic-trans">
+                                <button id="startCrop" class="buttons">Crop</button>
+                                <button id="finishCrop" class="buttons">Save Crop</button>
+                                <button id="startStrech" class="def-btn">Strech</button>
+                            </div>
+                            <button class="stepper buttons basic-trans" data-nav="next" aria-label="Next step" title="Next step">Next</button>
+                        </div>
+                        <div class="step" data-step="2">
+                            <h3>Step 2: Add text and style</h3>
+                            <div class="input-row">
+                                <select id="fontSelector" class="vw-100-input">
+                                    <option disabled selected value> Select font </option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="MarkerFelt-Thin, Comic Sans MS">Comic Sans</option>
+                                    <option value="Pacifico">Pacifico</option>
+                                </select>
+                            </div>
+                            <div class="input-row">
+                                <input id="upperText" class="text-input vw-100-input" type="text" placeholder="Upper text" data-position="top" placeholder="Top text">
+                            </div>
+                            <div class="input-row">
+                                <input id="bottomText" class="text-input vw-100-input" type="text" placeholder="Bottom text" data-position="bottom" placeholder="Bottom text">
+                            </div>
+                            <div class="input-row section v-align">
+                                <label>Pick text color</label>
+                                <input id="textColor" class="jscolor {hash:true} color-picker" value="" readonly>
+                            </div>
+                            <div class="input-row section v-align">
+                                <label>Pick stroke color</label>
+                                <input id="strokeColor" class="jscolor {hash:true} color-picker" value="" readonly>
+                            </div>
+                            <div class="input-row section v-align">
+                                <label>Modify text size</label>
+                                <input id="fontSize" type="number" min="10" max="50">
+                            </div>
+                            <button class="stepper buttons basic-trans" data-nav="prev" aria-label="Previous step" title="Previous step">Back</button>
+                            <button class="stepper buttons basic-trans" data-nav="next" aria-label="Next step" title="Next step">Next</button>
+                        </div>
+                        <div class="step" data-step="3">
+                            <h3>Step 3: Select format and download meme </h3>
+                            <div class="input-row">
+                                <input id="projectName" class="vw-100-input" type="text" placeholder="Set a name for your meme">
+                            </div>
+                            <div class="input-row">
+                                <select id="formatSelect" class="vw-100-input">
+                                    <option disabled selected value> Options </option>
+                                    <option value="JPG">JPG</option>
+                                    <option value="PNG">PNG</option>
+                                    <option value="GIF">GIF</option>
+                                </select>
+                            </div>
+                            <button class="stepper buttons basic-trans" data-nav="prev" aria-label="Previous step" title="Previous step">Back</button>
+                            <a download="" id="downloadMeme" class="basic-trans">Download Meme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="switch-wrapper">
+            <span class="switcher-info"> </span>
+            <label class="switch">
+                <input type="checkbox">
+            </label>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/cropper.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jscolor.js"></script>
+
+</body>
+</html>
