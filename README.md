@@ -18,6 +18,4 @@ Name | Reason
 [cropper.js](https://github.com/oscarkey/cropper.js) | For cropping images
 
 
-```console
 See demo here: https://when-i-code.github.io/memeGenerator/
-```
